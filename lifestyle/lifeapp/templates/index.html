@@ -1,0 +1,163 @@
+{% load static %}
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" 
+          href= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	<style type="text/css">
+	body{
+		 background-image:url("{% static 'event.jfif' %}");
+		 height: 100%;
+		 width:100%;
+		 margin: 0px;
+		 padding: 0px;
+	}
+		#companyname{
+			color: white;
+			font-size: 50px;
+			font-family: cursive;
+		}
+		ul{
+			float:right;
+			list-style-type: none;
+			display: inline-flex;
+		}
+		li{
+			color: white;
+			font-style: bold;
+			font-size: 20px;
+			width: 170px;
+		}
+		h1{
+			margin-left: 150px;
+			font-family:cursive;
+		}
+		#div1{
+			background: rgba(0,0,0,0.5);
+			color: #fff;
+			position: absolute;
+			width:500px;
+			height: 400px;
+			margin-left: 980px;
+			margin-bottom: 100px;
+			margin-top: 100px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		input{
+
+			width: 400px;
+			height:40px;
+			border-radius: 20px;
+			font-size: 20px;
+			font-family: cursive;
+			margin-left: 20px;
+			padding-left: 30px;
+
+		}
+		#btn{
+			background-color: rgb(89, 90, 94);
+			color: white;
+			width: 430px;
+			height: 40px;
+			margin-left: 40px;
+		}
+		#a{	
+			color: white;
+			position: absolute;
+			text-decoration: none;
+			margin-left: 60px;
+	
+		}
+		i{
+			position: relative;
+			left:50px;
+			top: 0px;
+			color: gray;
+		}
+		p{
+			color:white;
+		}
+		#a1{
+			text-decoration: none;
+			color: white;
+		}
+		#footer{
+			background-color: black;
+			width: 100%;
+			height: 80px;
+			margin-top: 600px;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function data()
+		{
+			user_obj=document.getElementById('user_id');
+			password_obj=document.getElementById('password_id');
+			error=0;
+			if(user_obj.value=="")
+			{
+				user_obj.style.borderColor="red"
+				document.getElementById('msg1').innerHTML=" * The Email or password that you've enterd doesn't match  any account.";
+				error+=1;
+			}
+			else
+			{
+				document.getElementById('msg1').innerHTML="";
+			}
+			if(password_obj.value=="")
+			{
+				password_obj.style.borderColor="red"
+				document.getElementById('msg1').innerHTML=" * The Email or password that you've enterd doesn't match  any account.";
+				error+=1;
+			}
+			else
+			{
+				document.getElementById('msg1').innerHTML="";
+			}
+			if (error>0)
+			{
+				return false;
+			}
+
+		}
+	</script>
+</head>
+<body>
+<div>	
+<header>
+	<nav>
+		<span id="companyname">LIFESTYLE</span>
+		<ul>
+			<li> HOME </li>
+			<li> SERVICES </li>
+			<li> CONTACT</li>
+			<li> LOGIN</li>
+		</ul>
+	</nav>
+</header>
+</div>
+	<form method="POST" action="/lifeapp/">
+	<div id="div1">
+		<h1>SIGN IN</h1>
+	<span style="color:red" id="msg1"></span><br>
+	<i class="fa fa-user icon"></i>
+	<input type="text" name="username" placeholder="Username or Email" id="user_id"><br><br>
+	<i class="fa fa-key icon"></i>
+	<input type="password" name="password" placeholder= "Password" id="password_id"><br><br>
+	<input type="submit" value="Login" id="btn" onclick="return data()"><br><br><br>
+	<i class="fa fa-lock icon"></i>
+	<a href="" id="a">Forgot your password?</a>
+	</div>
+	</form>
+	<div id="footer">
+<footer>
+	<p>Contact information:</p>
+	<p><a href="mailto:extend@gmail.com" id="a1">extend@gmail.com</a></p>
+	<p>999-000-123</a></p>
+</footer>
+</div>
+</body>
+</html>
